@@ -1,0 +1,1 @@
+pythonDllPath=C:\\Users\\noemi\\AppData\\Local\\Programs\\Python\\Python311\\python311.dll

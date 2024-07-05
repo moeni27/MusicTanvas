@@ -1,0 +1,311 @@
+﻿<Window x:Class="MusicTanvas.MainWindow"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:local="clr-namespace:MusicTanvas"
+       mc:Ignorable="d"
+       Title="MusicTanvas" Height="1080" Width="1920" Loaded="Window_Loaded">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Name="rowHeight" Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <!--WOODWIND SECTION-->
+
+        <Grid Grid.Column="1" Grid.Row="0">
+            <!-- Grid with 7 Columns for Vertical Stripes -->
+            <Grid Name="gridStripes" Grid.Row="0" Background="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Name="col1" Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Vertical Stripes with Solid Colors -->
+                <Rectangle Grid.Column="0" Fill="#E6F0FF"/>
+                <!-- Light Blue -->
+                <Rectangle Grid.Column="1" Fill="#B3D1FF"/>
+                <!-- Medium-Light Blue -->
+                <Rectangle Grid.Column="2" Fill="#80B3FF"/>
+                <!-- Medium Blue -->
+                <Rectangle Grid.Column="3" Fill="#4D96FF"/>
+                <!-- Medium-Dark Blue -->
+                <Rectangle Grid.Column="4" Fill="#2666CC"/>
+                <!-- Dark Blue -->
+                <Rectangle Grid.Column="5" Fill="#1A4D99"/>
+                <!-- Darker Blue -->
+                <Rectangle Grid.Column="6" Fill="#0D3366"/>
+                <!-- Darkest Blue -->
+                <!-- Placeholder for the sprite -->
+                <Canvas Name="spriteCanvas" Grid.Column="0"/>
+            </Grid>
+
+            <Canvas Name="canvasWind">
+                <!-- Your existing content for Canvas and Viewport3D -->
+                <Viewport3D Name="viewportWind" 
+                    Width="{Binding ActualWidth, ElementName=canvasWind}" 
+                    Height="{Binding ActualHeight, ElementName=canvasWind}"
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Viewport3D.Camera>
+                        <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45"/>
+                    </Viewport3D.Camera>
+                    <ModelVisual3D>
+                        <ModelVisual3D.Content>
+                            <Model3DGroup>
+                                <!-- <AmbientLight Color="#FFFFFF"/> -->
+                                <DirectionalLight Color="White" Direction="1,-1,2"/>
+                                <GeometryModel3D x:Name="sphereModelWind">
+                                    <GeometryModel3D.Material>
+                                        <DiffuseMaterial Brush="Blue"/>
+                                    </GeometryModel3D.Material>
+                                </GeometryModel3D>
+                            </Model3DGroup>
+                        </ModelVisual3D.Content>
+                    </ModelVisual3D>
+                </Viewport3D>
+            </Canvas>
+
+            <TextBlock Text="Woodwinds" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+
+
+
+            <Border x:Name="woodTrackBorder" BorderBrush="Black" BorderThickness="5,5,2.5,2.5">
+                <!-- Content of Border if needed -->
+            </Border>
+        </Grid>
+
+
+
+
+        <!--BRASS SECTION-->
+
+        <!-- Background with 7 stripes of light to dark yellow
+        <Rectangle Width="{Binding Path=ActualWidth, ElementName=canvasBrass}" Height="{Binding Path=ActualHeight, ElementName=canvasBrass}" Canvas.Left="0" Canvas.Top="0">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#FFFF99" Offset="0"/>
+                    <GradientStop Color="#FFFF33" Offset="0.2"/>
+                    <GradientStop Color="#FFFF00" Offset="0.4"/>
+                    <GradientStop Color="#FFCC99" Offset="0.6"/>
+                    <GradientStop Color="#FFCC33" Offset="0.7"/>
+                    <GradientStop Color="#FFCC00" Offset="0.8"/>
+                    <GradientStop Color="#FF9900" Offset="1"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        End of background -->
+
+        <Grid Name="brassGrid" Grid.Column="2" Grid.Row="0">
+            <Grid Name="gridBrass" Grid.Row="0" Background="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Vertical Stripes with Solid Colors -->
+                <Rectangle Grid.Column="0" Fill="#FFFFE0"/>
+                <!-- Light Yellow -->
+                <Rectangle Grid.Column="1" Fill="#FFFFB3"/>
+                <!-- Medium-Light Yellow -->
+                <Rectangle Grid.Column="2" Fill="#FFFF80"/>
+                <!-- Medium Yellow -->
+                <Rectangle Grid.Column="3" Fill="#FFFF4D"/>
+                <!-- Medium-Dark Yellow -->
+                <Rectangle Grid.Column="4" Fill="#CCCC00"/>
+                <!-- Dark Yellow -->
+                <Rectangle Grid.Column="5" Fill="#999900"/>
+                <!-- Darker Yellow -->
+                <Rectangle Grid.Column="6" Fill="#666600"/>
+                <!-- Darkest Yellow -->
+            </Grid>
+
+            <Canvas Name="canvasBrass" Grid.Column="2" Grid.Row="0">
+                <Viewport3D Name="viewportBrass" 
+                Width="{Binding ActualWidth, ElementName=canvasBrass}" 
+                Height="{Binding ActualHeight, ElementName=canvasBrass}"
+                HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Viewport3D.Camera>
+                        <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45"/>
+                    </Viewport3D.Camera>
+                    <ModelVisual3D>
+                        <ModelVisual3D.Content>
+                            <Model3DGroup>
+                                <DirectionalLight Color="Yellow" Direction="1,-1,2"/>
+                                <GeometryModel3D x:Name="sphereModelBrass">
+                                    <GeometryModel3D.Material>
+                                        <DiffuseMaterial Brush="Yellow"/>
+                                    </GeometryModel3D.Material>
+                                </GeometryModel3D>
+                            </Model3DGroup>
+                        </ModelVisual3D.Content>
+                    </ModelVisual3D>
+                </Viewport3D>
+                <TextBlock Text="Brass" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+            </Canvas>
+
+            <Border x:Name="brassTrackBorder"  BorderBrush="Black" BorderThickness="5,5,2.5,2.5">
+                <!-- Content of Border if needed -->
+            </Border>
+        </Grid>
+
+        <!--PERCUSSION SECTION-->
+
+        <Grid Grid.Column="1" Grid.Row="2">
+            <Grid Name="gridDrum" Grid.Row="0" Background="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Vertical Stripes with Solid Colors -->
+                <Rectangle Grid.Column="0" Fill="#FFCCCC"/>
+                <!-- Light Red -->
+                <Rectangle Grid.Column="1" Fill="#FF9999"/>
+                <!-- Medium-Light Red -->
+                <Rectangle Grid.Column="2" Fill="#FF6666"/>
+                <!-- Medium Red -->
+                <Rectangle Grid.Column="3" Fill="#FF3333"/>
+                <!-- Medium-Dark Red -->
+                <Rectangle Grid.Column="4" Fill="#CC0000"/>
+                <!-- Dark Red -->
+                <Rectangle Grid.Column="5" Fill="#990000"/>
+                <!-- Darker Red -->
+                <Rectangle Grid.Column="6" Fill="#660000"/>
+                <!-- Darkest Red -->
+            </Grid>
+
+            <Canvas Name="canvasPercussion" Grid.Column="1" Grid.Row="1">
+                <Viewport3D Name="viewportDrum" 
+                Width="{Binding ActualWidth, ElementName=canvasPercussion}" 
+                Height="{Binding ActualHeight, ElementName=canvasPercussion}"
+                HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Viewport3D.Camera>
+                        <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45"/>
+                    </Viewport3D.Camera>
+                    <ModelVisual3D>
+                        <ModelVisual3D.Content>
+                            <Model3DGroup>
+                                <DirectionalLight Color="White" Direction="1,-1,2"/>
+                                <GeometryModel3D x:Name="sphereModelDrum">
+                                    <GeometryModel3D.Material>
+                                        <DiffuseMaterial Brush="Red"/>
+                                    </GeometryModel3D.Material>
+                                </GeometryModel3D>
+                            </Model3DGroup>
+                        </ModelVisual3D.Content>
+                    </ModelVisual3D>
+                </Viewport3D>
+                <TextBlock Text="Percussion" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+            </Canvas>
+
+            <Border x:Name="PercussionTrackBorder"  BorderBrush="Black" BorderThickness="5,5,2.5,2.5">
+                <!-- Content of Border if needed -->
+            </Border>
+
+        </Grid>
+
+
+
+
+
+        <!--STRING SECTION-->
+
+        <Grid Grid.Column="2" Grid.Row="2">
+            <Grid Name="gridString" Grid.Row="0" Background="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Vertical Stripes with Solid Colors -->
+                <Rectangle Grid.Column="0" Fill="#CCFFCC"/>
+                <!-- Light Green -->
+                <Rectangle Grid.Column="1" Fill="#99FF99"/>
+                <!-- Medium-Light Green -->
+                <Rectangle Grid.Column="2" Fill="#66FF66"/>
+                <!-- Medium Green -->
+                <Rectangle Grid.Column="3" Fill="#33FF33"/>
+                <!-- Medium-Dark Green -->
+                <Rectangle Grid.Column="4" Fill="#00CC00"/>
+                <!-- Dark Green -->
+                <Rectangle Grid.Column="5" Fill="#009900"/>
+                <!-- Darker Green -->
+                <Rectangle Grid.Column="6" Fill="#006600"/>
+                <!-- Darkest Green -->
+            </Grid>
+
+
+            <Canvas Name="canvasString" Grid.Column="2" Grid.Row="1">
+                <Viewport3D Name="viewportString" 
+                Width="{Binding ActualWidth, ElementName=canvasString}" 
+                Height="{Binding ActualHeight, ElementName=canvasString}"
+                HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Viewport3D.Camera>
+                        <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45"/>
+                    </Viewport3D.Camera>
+                    <ModelVisual3D>
+                        <ModelVisual3D.Content>
+                            <Model3DGroup>
+                                <DirectionalLight Color="Yellow" Direction="1,-1,2"/>
+                                <GeometryModel3D x:Name="sphereModelString">
+                                    <GeometryModel3D.Material>
+                                        <DiffuseMaterial Brush="Green"/>
+                                    </GeometryModel3D.Material>
+                                </GeometryModel3D>
+                            </Model3DGroup>
+                        </ModelVisual3D.Content>
+                    </ModelVisual3D>
+                </Viewport3D>
+                <TextBlock Text="Strings" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+            </Canvas>
+
+            <Border x:Name="stringTrackBorder"  BorderBrush="Black" BorderThickness="5,5,2.5,2.5">
+                <!-- Content of Border if needed -->
+            </Border>
+
+        </Grid>
+
+        <Button Name="buttonPlay" Click="onClickPlayButton" Visibility="Visible" Width="60" Height="60" Background="White" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="0">
+            <Image Source="Assets/play.png"/>
+        </Button>
+        <Button Name="buttonStop" Click="onClickStopButton" Visibility="Hidden" Width="60" Height="60" Background="White" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="0">
+            <Image Source="Assets/stop.png"/>
+        </Button>
+
+        <StackPanel Grid.Column="0" Grid.Row="1">
+            <Slider x:Name="volumeSlider" ValueChanged="OnVolumeSliderChanged" Minimum="0" Maximum="1" Value="0.5" Width="32" Height="325" Orientation="Vertical"  />
+            <TextBlock Text="Volume" Foreground="Black" FontSize="24" TextAlignment="Center"/>
+        </StackPanel>
+
+
+
+
+    </Grid>
+</Window>
