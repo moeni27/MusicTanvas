@@ -20,4 +20,4 @@ MusicTanvas is a WPF application designed to integrate visual and tactile feedba
 - [NAudio](https://github.com/naudio/NAudio)
 - [Python.NET](https://pythonnet.github.io/)
 - [Sprite](https://www.nuget.org/packages/Sprite/)
-- [Tanvas.TanvasTouch.WpfUtilities](https://www.tanvas.com/)
+- [Tanvas.TanvasTouch.WpfUtilities](https://api-docs.tanvas.co/tanvastouch/dotnet/5.0.1/api/index.html)
