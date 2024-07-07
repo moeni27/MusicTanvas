@@ -2,14 +2,14 @@
 ## Description
 MusicTanvas is a WPF application designed to integrate visual and tactile feedback into music listening experiences using the Tanvas tablet. It leverages audio processing algorithms and machine learning techniques to provide interactive visual and haptic representations of audio tracks.
 
+This project is developed as part of a thesis in Music and Acoustic Engineering at Politecnico di Milano in association with Politecnico di Torino.
+
 ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
 - [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Installation
@@ -65,4 +65,39 @@ MusicTanvas is a WPF application designed to integrate visual and tactile feedba
 - Maximum number of audio files is set to 4.
 
 ### How to Add Audio Files
-- The uploaded audio files will be copied in the `Assets/Audio` directory.
+- The uploaded audio files will be copied in the `MusicTanvas/bin/Debug/net8.0-windows/Assets/Audio` directory.
+
+## Contact
+- Email: noeemi.mae@gmail.com
+- GitHub: [moeni27](https://github.com/moeni27)
+
+---
+
+## Detailed Functionality
+
+### Visual and Haptic Representations
+
+#### Graphical User Interface Structure
+The prototype application interface is structured into up to four distinct sections, each representing a prominent instrument group. Users can explore the app in two modes: **Multi-Track Mode** and **Single-Track Mode**.
+
+- **Multi-Track Mode**: The user can upload up to four audio files simultaneously. The interface dynamically adjusts based on the number of tracks uploaded, displaying a distinct section per track. All tracks must have the same duration to be reproduced or stopped simultaneously.
+
+- **Single-Track Mode**: By uploading a single audio file, the app uses a tool called **Spleeter** to split it into four parts: vocals, bass, percussion, and other instruments.
+
+#### Audio Processing Algorithms
+To offer meaningful visualization of audio content, our application relies on a number of audio processing algorithms:
+- **Chromagram, MFCC, Spectral Centroid, and Loudness Extraction**: Implemented using the `librosa` Python library.
+- **Automatic Instrument Recognition and Classification**: Using MFCC as the acoustic feature via a combination of classifiers.
+- **Rhythmic Complexity Quantification**: Using an onset extraction algorithm based on the Short-Time Fourier Transform (STFT).
+
+#### Mappings of Audio Features to Visual and Haptic Representations
+- **MFCC or Chromagram**: Mapped to color brightness and texture roughness of background stripes.
+- **Rhythmic Complexity**: Mapped to the sphere's surface.
+- **Spectral Centroid**: Mapped to the sphere's color brightness.
+- **Loudness**: Mapped to the sphere's radius.
+
+### Example Representations
+- **Foreground Sphere**: Radius dynamically adjusts based on the loudness of the corresponding audio track.
+- **Background Stripes**: Color transitions from lighter to darker hues, reflecting the normalized values of MFCC coefficients or chromas.
+
+
