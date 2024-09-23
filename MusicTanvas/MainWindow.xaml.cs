@@ -163,35 +163,36 @@ namespace MusicTanvas
 
 
         private void ClearAudioFolder()
-        {
-            string audioFolderPath = "Assets/audio";
+{
+    string audioFolderPath = "Assets/audio";
 
-            try
+    try
+    {
+        // Check if the folder exists
+        if (Directory.Exists(audioFolderPath))
+        {
+            // Delete all files within the folder
+            foreach (string file in Directory.GetFiles(audioFolderPath))
             {
-                // Check if the folder exists
-                if (Directory.Exists(audioFolderPath))
-                {
-                    // Delete all files within the folder
-                    foreach (string file in Directory.GetFiles(audioFolderPath))
-                    {
-                        System.IO.File.Delete(file);
-                    }
-                    // Optionally, delete subdirectories if needed
-                    foreach (string dir in Directory.GetDirectories(audioFolderPath))
-                    {
-                        Directory.Delete(dir, true);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Audio folder does not exist.");
-                }
+                System.IO.File.Delete(file);
             }
-            catch (Exception ex)
+            // Optionally, delete subdirectories if needed
+            foreach (string dir in Directory.GetDirectories(audioFolderPath))
             {
-                MessageBox.Show($"Error clearing audio folder: {ex.Message}");
+                Directory.Delete(dir, true);
             }
         }
+        else
+        {
+            // Create the audio folder if it does not exist
+            Directory.CreateDirectory(audioFolderPath);
+        }
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show($"Error clearing audio folder: {ex.Message}");
+    }
+}
 
         public void onClickSingleBack(object sender, EventArgs e)
         {
