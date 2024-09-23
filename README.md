@@ -14,12 +14,15 @@ This project is developed as part of a thesis in Music and Acoustic Engineering 
 
 ## Installation
 ### Prerequisites
-- Visual Studio 2019 or later
-- Python from 3.6 to 3.9
-- [NAudio](https://github.com/naudio/NAudio)
-- [Python.NET](https://pythonnet.github.io/)
-- [Sprite](https://www.nuget.org/packages/Sprite/)
-- [Tanvas.TanvasTouch.WpfUtilities](https://api-docs.tanvas.co/tanvastouch/dotnet/5.0.1/api/index.html)
+#### NuGet Packages
+- **NAudio**: A powerful audio library for .NET that provides audio playback and manipulation capabilities.
+- **Sprite**: A library for managing sprite graphics in WPF applications.
+- **Tanvas.TanvasTouch.WpfUtilities**: Utilities for integrating Tanvas touch technology with WPF applications.
+- **Python.NET**: A package that allows Python code to interoperate with .NET applications, enabling the use of .NET libraries in Python scripts.
+
+#### Python Libraries
+- **Python**: Version 3.6 to 3.9 is required.
+- 
 
 ### Steps
 1. Clone the repository:
