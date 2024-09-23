@@ -1,0 +1,1196 @@
+﻿<Window x:Class="MusicTanvas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicTanvas"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1280" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style x:Key="ImageButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <!-- Custom slider style -->
+        <Style x:Key="CoolSliderStyle" TargetType="Slider">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Slider">
+                        <Grid>
+                            <!-- Track Background -->
+                            <Border CornerRadius="10" Width="32" Height="325">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="#FF3B3B3B" Offset="0.0"/>
+                                        <GradientStop Color="#FFAAAAAA" Offset="1.0"/>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                            </Border>
+
+                            <!-- Slider track and thumb -->
+                            <Track Name="PART_Track" Orientation="{TemplateBinding Orientation}">
+                                <!-- Slider thumb -->
+                                <Track.Thumb>
+                                    <Thumb Width="30" Height="30" Background="#6e4379" BorderBrush="White" BorderThickness="2">
+                                        <Thumb.Effect>
+                                            <DropShadowEffect Color="LightBlue" BlurRadius="15" ShadowDepth="0"/>
+                                        </Thumb.Effect>
+                                    </Thumb>
+                                </Track.Thumb>
+
+                                <!-- Track for value -->
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton Width="32" Height="325" Style="{x:Null}" />
+                                </Track.DecreaseRepeatButton>
+
+                                <!-- The portion of the track where the slider is -->
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton Width="32" Height="325" Style="{x:Null}" />
+                                </Track.IncreaseRepeatButton>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+    <Grid>
+        <!-- Start Screen -->
+        <Grid x:Name="StartScreen" Visibility="Visible"  >
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/music_tanvas_bg.png" />
+            </Grid.Background>
+
+            <Button x:Name="StartButton" Style="{StaticResource ImageButtonStyle}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50" Click="StartButton_Click">
+                <Image Source="Assets/start_bt.png" Height="132" Width="355"/>
+            </Button>
+        </Grid>
+
+        <!-- Mode Screen -->
+        <Grid x:Name="GenreScreen" Visibility="Collapsed" >
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/mode_background.png" />
+            </Grid.Background>
+
+            <Label Content="CHOOSE AUDIO UPLOAD MODE" 
+       Foreground="#6e4379" 
+       FontSize="54" 
+       FontFamily="Rockwell Extra Bold"
+       HorizontalAlignment="Center" 
+       VerticalAlignment="Top" 
+       Margin="0,160,0,0" 
+       Background="Transparent" 
+       Padding="10" 
+       HorizontalContentAlignment="Center" 
+       VerticalContentAlignment="Center" 
+       Grid.Row="1" FontWeight="Bold"/>
+
+            <StackPanel 
+                Orientation="Horizontal" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center">
+                <Button Name="singleMode" Style="{StaticResource ImageButtonStyle}" Margin="10,0" Click="Single_Track_Click">
+                    <Border BorderBrush="#6e4379" BorderThickness="3" CornerRadius="10">
+                        <StackPanel>
+                            <Image Source="Assets/single_mode.png" Width="346" Height="282"/>
+                        </StackPanel>
+                    </Border>
+                </Button>
+
+                <Button Name="multiMode" Style="{StaticResource ImageButtonStyle}" Margin="10,0" Click="Multi_Track_Click">
+                    <Border BorderBrush="#6e4379" BorderThickness="3" CornerRadius="10">
+                        <StackPanel>
+                            <Image Source="Assets/multi_mode.png" Width="346" Height="282"/>
+                        </StackPanel>
+                    </Border>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!-- MULTI TRACK WITH FOUR ELEMENT SCREEN -->
+        <Grid x:Name="MultiFourScreen" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
+                <Border.Background>
+                    <ImageBrush ImageSource="Assets/01_bc.png" Stretch="Fill"/>
+                </Border.Background>
+            </Border>
+
+            <!-- top left SECTION -->
+            <Grid Grid.Column="1" Grid.Row="0">
+                <Grid Name="gridFourFirst" Grid.Row="0" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Column="0" Fill="#E6F0FF"/>
+                    <Rectangle Grid.Column="1" Fill="#B3D1FF"/>
+                    <Rectangle Grid.Column="2" Fill="#80B3FF"/>
+                    <Rectangle Grid.Column="3" Fill="#4D96FF"/>
+                    <Rectangle Grid.Column="4" Fill="#2666CC"/>
+                    <Rectangle Grid.Column="5" Fill="#1A4D99"/>
+                    <Rectangle Grid.Column="6" Fill="#0D3366"/>
+                </Grid>
+                <Canvas Name="canvasWind">
+                    <Viewport3D Name="viewportWind" 
+                        Width="{Binding ActualWidth, ElementName=canvasWind}" 
+                        Height="{Binding ActualHeight, ElementName=canvasWind}"
+                        HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Viewport3D.Camera>
+                            <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45"/>
+                        </Viewport3D.Camera>
+                        <ModelVisual3D>
+                            <ModelVisual3D.Content>
+                                <Model3DGroup>
+                                    <DirectionalLight Color="White" Direction="1,-1,2"/>
+                                    <GeometryModel3D x:Name="sphereFourFirst">
+                                        <GeometryModel3D.Material>
+                                            <DiffuseMaterial Brush="Blue"/>
+                                        </GeometryModel3D.Material>
+                                    </GeometryModel3D>
+                                </Model3DGroup>
+                            </ModelVisual3D.Content>
+                        </ModelVisual3D>
+                    </Viewport3D>
+                </Canvas>
+                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <Border x:Name="woodTrackBorder" BorderBrush="Black" BorderThickness="5,5,2.5,2.5"/>
+            </Grid>
+
+            <!-- top right SECTION -->
+            <Grid Grid.Column="2" Grid.Row="0">
+                <Grid Name="gridFourSecond" Grid.Row="0" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Column="0" Fill="#FFFFE0"/>
+                    <Rectangle Grid.Column="1" Fill="#FFFFB3"/>
+                    <Rectangle Grid.Column="2" Fill="#FFFF80"/>
+                    <Rectangle Grid.Column="3" Fill="#FFFF4D"/>
+                    <Rectangle Grid.Column="4" Fill="#CCCC00"/>
+                    <Rectangle Grid.Column="5" Fill="#999900"/>
+                    <Rectangle Grid.Column="6" Fill="#666600"/>
+                </Grid>
+                <Canvas Name="canvasBrass">
+                    <Viewport3D Name="viewportBrass" 
+                        Width="{Binding ActualWidth, ElementName=canvasBrass}" 
+                        Height="{Binding ActualHeight, ElementName=canvasBrass}"
+                        HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Viewport3D.Camera>
+                            <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45"/>
+                        </Viewport3D.Camera>
+                        <ModelVisual3D>
+                            <ModelVisual3D.Content>
+                                <Model3DGroup>
+                                    <DirectionalLight Color="White" Direction="1,-1,2"/>
+                                    <GeometryModel3D x:Name="sphereFourSecond">
+                                        <GeometryModel3D.Material>
+                                            <DiffuseMaterial Brush="Yellow"/>
+                                        </GeometryModel3D.Material>
+                                    </GeometryModel3D>
+                                </Model3DGroup>
+                            </ModelVisual3D.Content>
+                        </ModelVisual3D>
+                    </Viewport3D>
+                </Canvas>
+                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <Border x:Name="brassTrackBorder" BorderBrush="Black" BorderThickness="2.5,5,5,2.5"/>
+            </Grid>
+
+            <!-- bottom left SECTION -->
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Grid Name="gridFourThird" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Column="0" Fill="#FFFFE0"/>
+                    <Rectangle Grid.Column="1" Fill="#FFFFB3"/>
+                    <Rectangle Grid.Column="2" Fill="#FFFF80"/>
+                    <Rectangle Grid.Column="3" Fill="#FFFF4D"/>
+                    <Rectangle Grid.Column="4" Fill="#CCCC00"/>
+                    <Rectangle Grid.Column="5" Fill="#999900"/>
+                    <Rectangle Grid.Column="6" Fill="#666600"/>
+                </Grid>
+                <Canvas Name="canvasFourThird">
+                    <Viewport3D Name="viewportFourThird" 
+Width="{Binding ActualWidth, ElementName=canvasFourThird}" 
+Height="{Binding ActualHeight, ElementName=canvasFourThird}"
+HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Viewport3D.Camera>
+                            <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45"/>
+                        </Viewport3D.Camera>
+                        <ModelVisual3D>
+                            <ModelVisual3D.Content>
+                                <Model3DGroup>
+                                    <DirectionalLight Color="White" Direction="1,-1,2"/>
+                                    <GeometryModel3D x:Name="sphereFourThird">
+                                        <GeometryModel3D.Material>
+                                            <DiffuseMaterial Brush="Yellow"/>
+                                        </GeometryModel3D.Material>
+                                    </GeometryModel3D>
+                                </Model3DGroup>
+                            </ModelVisual3D.Content>
+                        </ModelVisual3D>
+                    </Viewport3D>
+                </Canvas>
+                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <Border x:Name="FourThirdTrackBorder" BorderBrush="Black" BorderThickness="5,2.5,2.5,5"/>
+            </Grid>
+
+            <!-- bottom right SECTION -->
+            <Grid Grid.Column="2" Grid.Row="1">
+                <Grid Name="gridFourFourth" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Column="0" Fill="#FFFFE0"/>
+                    <Rectangle Grid.Column="1" Fill="#FFFFB3"/>
+                    <Rectangle Grid.Column="2" Fill="#FFFF80"/>
+                    <Rectangle Grid.Column="3" Fill="#FFFF4D"/>
+                    <Rectangle Grid.Column="4" Fill="#CCCC00"/>
+                    <Rectangle Grid.Column="5" Fill="#999900"/>
+                    <Rectangle Grid.Column="6" Fill="#666600"/>
+                </Grid>
+                <Canvas Name="canvasFourFourth">
+                    <Viewport3D Name="viewportFourFourth" 
+Width="{Binding ActualWidth, ElementName=canvasFourFourth}" 
+Height="{Binding ActualHeight, ElementName=canvasFourFourth}"
+HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Viewport3D.Camera>
+                            <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45"/>
+                        </Viewport3D.Camera>
+                        <ModelVisual3D>
+                            <ModelVisual3D.Content>
+                                <Model3DGroup>
+                                    <DirectionalLight Color="White" Direction="1,-1,2"/>
+                                    <GeometryModel3D x:Name="sphereFourFourth">
+                                        <GeometryModel3D.Material>
+                                            <DiffuseMaterial Brush="Yellow"/>
+                                        </GeometryModel3D.Material>
+                                    </GeometryModel3D>
+                                </Model3DGroup>
+                            </ModelVisual3D.Content>
+                        </ModelVisual3D>
+                    </Viewport3D>
+                </Canvas>
+                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <Border x:Name="FourFourthTrackBorder" BorderBrush="Black" BorderThickness="2.5,2.5,5,5"/>
+            </Grid>
+
+            <Button Name="fourBack" Click="onClickMultiBack" Visibility="Visible" Width="60" Height="60" Background="Transparent" HorizontalAlignment="left" VerticalAlignment="Top" Margin="10,10,20,0" BorderThickness="0">
+                <Image Source="Assets/bLeft.png"/>
+            </Button>
+
+            <Button Name="buttonFourPlay" Click="onClickPlayButton" Visibility="Visible" Width="60" Height="60" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,20,0" BorderThickness="0">
+                <Image Source="Assets/bPlay.png"/>
+            </Button>
+            <Button Name="buttonFourStop" Click="onClickStopButton" Visibility="Hidden" Width="60" Height="60" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,20,0" BorderThickness="0">
+                <Image Source="Assets/bPause.png"/>
+            </Button>
+
+            <Label Content="HAPTIC FEATURE" 
+Foreground="#6e4379" 
+FontSize="20" 
+FontFamily="Rockwell Extra Bold"
+HorizontalAlignment="Center" 
+VerticalAlignment="Top" 
+Margin="0,95,0,0" 
+Background="Transparent" 
+Padding="20" 
+HorizontalContentAlignment="Center" 
+VerticalContentAlignment="Center" FontWeight="Bold"/>
+
+            <!-- Chroma/Mfcc Buttons -->
+
+            <Button Name="fourChromaButton" Click="onClickChroma" Visibility="Visible" Width="246" Height="120" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,110,0,0" BorderThickness="0">
+                <Image Source="Assets/chroma.png"/>
+            </Button>
+            <Button Name="fourMfccButton" Click="onClickMfcc" Visibility="Hidden" Width="256" Height="120" Background="transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,110,0,0" BorderThickness="0">
+                <Image Source="Assets/mfcc.png"/>
+            </Button>
+
+            <StackPanel Name="fourStack" Grid.Column="0" Grid.Row="1">
+                <Slider x:Name="volumeFourSlider" 
+    Minimum="0" Maximum="1" Value="1" 
+    Width="32" Height="325" 
+    Orientation="Vertical" 
+    Style="{StaticResource CoolSliderStyle}" 
+    ValueChanged="OnVolumeSliderChanged" />
+                <Label Content="VOLUME" 
+Foreground="#6e4379" 
+FontSize="20" 
+FontFamily="Rockwell Extra Bold"
+HorizontalAlignment="Center" 
+VerticalAlignment="Top" 
+Margin="0,0,0,0" 
+Background="Transparent" 
+Padding="5" 
+HorizontalContentAlignment="Center" 
+VerticalContentAlignment="Center" FontWeight="Bold"/>
+            </StackPanel>
+
+        </Grid>
+
+
+        <!-- MULTI TRACK WITH ONE ELEMENT SCREEN -->
+        <Grid x:Name="MultiOneScreen" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
+                <Border.Background>
+                    <ImageBrush ImageSource="Assets/01_bc.png" Stretch="Fill"/>
+                </Border.Background>
+            </Border>
+
+            <!-- ONE SECTION -->
+            <Grid Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+                <Grid Name="gridOne" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Column="0" Fill="#E6F0FF"/>
+                    <Rectangle Grid.Column="1" Fill="#B3D1FF"/>
+                    <Rectangle Grid.Column="2" Fill="#80B3FF"/>
+                    <Rectangle Grid.Column="3" Fill="#4D96FF"/>
+                    <Rectangle Grid.Column="4" Fill="#2666CC"/>
+                    <Rectangle Grid.Column="5" Fill="#1A4D99"/>
+                    <Rectangle Grid.Column="6" Fill="#0D3366"/>
+                </Grid>
+                <Canvas Name="canvasOne">
+                    <Viewport3D Name="viewportOne" 
+                Width="{Binding ActualWidth, ElementName=canvasOne}" 
+                Height="{Binding ActualHeight, ElementName=canvasOne}"
+                HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Viewport3D.Camera>
+                            <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45"/>
+                        </Viewport3D.Camera>
+                        <ModelVisual3D>
+                            <ModelVisual3D.Content>
+                                <Model3DGroup>
+                                    <DirectionalLight Color="White" Direction="1,-1,2"/>
+                                    <GeometryModel3D x:Name="sphereOne">
+                                        <GeometryModel3D.Material>
+                                            <DiffuseMaterial Brush="Blue"/>
+                                        </GeometryModel3D.Material>
+                                    </GeometryModel3D>
+                                </Model3DGroup>
+                            </ModelVisual3D.Content>
+                        </ModelVisual3D>
+                    </Viewport3D>
+                </Canvas>
+                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <Border x:Name="oneTrackBorder" BorderBrush="Black" BorderThickness="5,5,5,5"/>
+            </Grid>
+
+            <Button Name="oneBack" Click="onClickMultiBack" Visibility="Visible" Width="60" Height="60" Background="Transparent" HorizontalAlignment="left" VerticalAlignment="Top" Margin="10,10,20,0" BorderThickness="0">
+                <Image Source="Assets/bLeft.png"/>
+            </Button>
+
+            <Button Name="buttonOnePlay" Click="onClickPlayButton" Visibility="Visible" Width="60" Height="60" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,20,0" BorderThickness="0">
+                <Image Source="Assets/bPlay.png"/>
+            </Button>
+            <Button Name="buttonOneStop" Click="onClickStopButton" Visibility="Hidden" Width="60" Height="60" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,20,0" BorderThickness="0">
+                <Image Source="Assets/bPause.png"/>
+            </Button>
+
+            <Label Content="HAPTIC FEATURE" 
+Foreground="#6e4379" 
+FontSize="20" 
+FontFamily="Rockwell Extra Bold"
+HorizontalAlignment="Center" 
+VerticalAlignment="Top" 
+Margin="0,95,0,0" 
+Background="Transparent" 
+Padding="20" 
+HorizontalContentAlignment="Center" 
+VerticalContentAlignment="Center" FontWeight="Bold"/>
+
+            <!-- Chroma/Mfcc Buttons -->
+            <Button Name="oneChromaButton" Click="onClickChroma" Visibility="Visible" Width="246" Height="120" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,110,0,0" BorderThickness="0">
+                <Image Source="Assets/chroma.png"/>
+            </Button>
+            <Button Name="oneMfccButton" Click="onClickMfcc" Visibility="Hidden" Width="256" Height="120" Background="transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,110,0,0" BorderThickness="0">
+                <Image Source="Assets/mfcc.png"/>
+            </Button>
+            <StackPanel Name="oneStack" Grid.Column="0" Grid.Row="1">
+                <Slider x:Name="volumeOneSlider" 
+    Minimum="0" Maximum="1" Value="1" 
+    Width="32" Height="325" 
+    Orientation="Vertical" 
+    Style="{StaticResource CoolSliderStyle}" 
+    ValueChanged="OnVolumeSliderChanged" />
+                <Label Content="VOLUME" 
+Foreground="#6e4379" 
+FontSize="20" 
+FontFamily="Rockwell Extra Bold"
+HorizontalAlignment="Center" 
+VerticalAlignment="Top" 
+Margin="0,0,0,0" 
+Background="Transparent" 
+Padding="5" 
+HorizontalContentAlignment="Center" 
+VerticalContentAlignment="Center" FontWeight="Bold"/>
+            </StackPanel>
+
+        </Grid>
+
+
+        <!-- MULTI TRACK WITH TWO ELEMENTS SCREEN -->
+        <Grid x:Name="MultiTwoScreen" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
+                <Border.Background>
+                    <ImageBrush ImageSource="Assets/01_bc.png" Stretch="Fill"/>
+                </Border.Background>
+            </Border>
+            <!-- left SECTION -->
+            <Grid Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+                <Grid Name="gridTwoFirst" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Column="0" Fill="#E6F0FF"/>
+                    <Rectangle Grid.Column="1" Fill="#B3D1FF"/>
+                    <Rectangle Grid.Column="2" Fill="#80B3FF"/>
+                    <Rectangle Grid.Column="3" Fill="#4D96FF"/>
+                    <Rectangle Grid.Column="4" Fill="#2666CC"/>
+                    <Rectangle Grid.Column="5" Fill="#1A4D99"/>
+                    <Rectangle Grid.Column="6" Fill="#0D3366"/>
+                </Grid>
+                <Canvas Name="canvasTwoFirst">
+                    <Viewport3D Name="viewportTwoFirst" 
+                Width="{Binding ActualWidth, ElementName=canvasTwoFirst}" 
+                Height="{Binding ActualHeight, ElementName=canvasTwoFirst}"
+                HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Viewport3D.Camera>
+                            <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45"/>
+                        </Viewport3D.Camera>
+                        <ModelVisual3D>
+                            <ModelVisual3D.Content>
+                                <Model3DGroup>
+                                    <DirectionalLight Color="White" Direction="1,-1,2"/>
+                                    <GeometryModel3D x:Name="sphereTwoFirst">
+                                        <GeometryModel3D.Material>
+                                            <DiffuseMaterial Brush="Blue"/>
+                                        </GeometryModel3D.Material>
+                                    </GeometryModel3D>
+                                </Model3DGroup>
+                            </ModelVisual3D.Content>
+                        </ModelVisual3D>
+                    </Viewport3D>
+                </Canvas>
+                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <Border x:Name="twoFirstTrackBorder" BorderBrush="Black" BorderThickness="5,5,2.5,5"/>
+            </Grid>
+
+            <!-- right SECTION -->
+            <Grid Grid.Column="2" Grid.Row="0" Grid.RowSpan="2">
+                <Grid Name="gridTwoSecond" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Column="0" Fill="#FFFFE0"/>
+                    <Rectangle Grid.Column="1" Fill="#FFFFB3"/>
+                    <Rectangle Grid.Column="2" Fill="#FFFF80"/>
+                    <Rectangle Grid.Column="3" Fill="#FFFF4D"/>
+                    <Rectangle Grid.Column="4" Fill="#CCCC00"/>
+                    <Rectangle Grid.Column="5" Fill="#999900"/>
+                    <Rectangle Grid.Column="6" Fill="#666600"/>
+                </Grid>
+                <Canvas Name="canvasTwoSecond">
+                    <Viewport3D Name="viewportTwoSecond" 
+                Width="{Binding ActualWidth, ElementName=canvasTwoSecond}" 
+                Height="{Binding ActualHeight, ElementName=canvasTwoSecond}"
+                HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Viewport3D.Camera>
+                            <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45"/>
+                        </Viewport3D.Camera>
+                        <ModelVisual3D>
+                            <ModelVisual3D.Content>
+                                <Model3DGroup>
+                                    <DirectionalLight Color="White" Direction="1,-1,2"/>
+                                    <GeometryModel3D x:Name="sphereTwoSecond">
+                                        <GeometryModel3D.Material>
+                                            <DiffuseMaterial Brush="Yellow"/>
+                                        </GeometryModel3D.Material>
+                                    </GeometryModel3D>
+                                </Model3DGroup>
+                            </ModelVisual3D.Content>
+                        </ModelVisual3D>
+                    </Viewport3D>
+                </Canvas>
+                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <Border x:Name="twoSecondTrackBorder" BorderBrush="Black" BorderThickness="2.5,5,5,5"/>
+            </Grid>
+
+            <Button Name="twoBack" Click="onClickMultiBack" Visibility="Visible" Width="60" Height="60" Background="Transparent" HorizontalAlignment="left" VerticalAlignment="Top" Margin="10,10,20,0" BorderThickness="0">
+                <Image Source="Assets/bLeft.png"/>
+            </Button>
+
+            <Button Name="buttonTwoPlay" Click="onClickPlayButton" Visibility="Visible" Width="60" Height="60" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,20,0" BorderThickness="0">
+                <Image Source="Assets/bPlay.png"/>
+            </Button>
+            <Button Name="buttonTwoStop" Click="onClickStopButton" Visibility="Hidden" Width="60" Height="60" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,20,0" BorderThickness="0">
+                <Image Source="Assets/bPause.png"/>
+            </Button>
+
+            <Label Content="HAPTIC FEATURE" 
+Foreground="#6e4379" 
+FontSize="20" 
+FontFamily="Rockwell Extra Bold"
+HorizontalAlignment="Center" 
+VerticalAlignment="Top" 
+Margin="0,95,0,0" 
+Background="Transparent" 
+Padding="20" 
+HorizontalContentAlignment="Center" 
+VerticalContentAlignment="Center" FontWeight="Bold"/>
+            <!-- Chroma/Mfcc Buttons -->
+            <Button Name="twoChromaButton" Click="onClickChroma" Visibility="Visible" Width="246" Height="120" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,110,0,0" BorderThickness="0">
+                <Image Source="Assets/chroma.png"/>
+            </Button>
+            <Button Name="twoMfccButton" Click="onClickMfcc" Visibility="Hidden" Width="256" Height="120" Background="transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,110,0,0" BorderThickness="0">
+                <Image Source="Assets/mfcc.png"/>
+            </Button>
+
+            <StackPanel Name="twoStack" Grid.Column="0" Grid.Row="1">
+                <Slider x:Name="volumeTwoSlider" 
+    Minimum="0" Maximum="1" Value="1" 
+    Width="32" Height="325" 
+    Orientation="Vertical" 
+    Style="{StaticResource CoolSliderStyle}" 
+    ValueChanged="OnVolumeSliderChanged" />
+                <Label Content="VOLUME" 
+Foreground="#6e4379" 
+FontSize="20" 
+FontFamily="Rockwell Extra Bold"
+HorizontalAlignment="Center" 
+VerticalAlignment="Top" 
+Margin="0,0,0,0" 
+Background="Transparent" 
+Padding="5" 
+HorizontalContentAlignment="Center" 
+VerticalContentAlignment="Center" FontWeight="Bold"/>
+            </StackPanel>
+
+        </Grid>
+
+        <!-- MULTI TRACK WITH THREE ELEMENTS SCREEN -->
+        <Grid x:Name="MultiThreeScreen" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
+                <Border.Background>
+                    <ImageBrush ImageSource="Assets/01_bc.png" Stretch="Fill"/>
+                </Border.Background>
+            </Border>
+
+            <!-- top left SECTION -->
+            <Grid Grid.Column="1" Grid.Row="0">
+                <Grid Name="gridThreeFirst" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Column="0" Fill="#E6F0FF"/>
+                    <Rectangle Grid.Column="1" Fill="#B3D1FF"/>
+                    <Rectangle Grid.Column="2" Fill="#80B3FF"/>
+                    <Rectangle Grid.Column="3" Fill="#4D96FF"/>
+                    <Rectangle Grid.Column="4" Fill="#2666CC"/>
+                    <Rectangle Grid.Column="5" Fill="#1A4D99"/>
+                    <Rectangle Grid.Column="6" Fill="#0D3366"/>
+                </Grid>
+                <Canvas Name="canvasThreeFirst">
+                    <Viewport3D Name="viewportThreeFirst" 
+                Width="{Binding ActualWidth, ElementName=canvasThreeFirst}" 
+                Height="{Binding ActualHeight, ElementName=canvasThreeFirst}"
+                HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Viewport3D.Camera>
+                            <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45"/>
+                        </Viewport3D.Camera>
+                        <ModelVisual3D>
+                            <ModelVisual3D.Content>
+                                <Model3DGroup>
+                                    <DirectionalLight Color="White" Direction="1,-1,2"/>
+                                    <GeometryModel3D x:Name="sphereThreeFirst">
+                                        <GeometryModel3D.Material>
+                                            <DiffuseMaterial Brush="Blue"/>
+                                        </GeometryModel3D.Material>
+                                    </GeometryModel3D>
+                                </Model3DGroup>
+                            </ModelVisual3D.Content>
+                        </ModelVisual3D>
+                    </Viewport3D>
+                </Canvas>
+                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <Border x:Name="ThreeFirstTrackBorder" BorderBrush="Black" BorderThickness="5,5,2.5,2.5"/>
+            </Grid>
+
+            <!-- top right SECTION -->
+            <Grid Grid.Column="2" Grid.Row="0">
+                <Grid Name="gridThreeSecond" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Column="0" Fill="#FFFFE0"/>
+                    <Rectangle Grid.Column="1" Fill="#FFFFB3"/>
+                    <Rectangle Grid.Column="2" Fill="#FFFF80"/>
+                    <Rectangle Grid.Column="3" Fill="#FFFF4D"/>
+                    <Rectangle Grid.Column="4" Fill="#CCCC00"/>
+                    <Rectangle Grid.Column="5" Fill="#999900"/>
+                    <Rectangle Grid.Column="6" Fill="#666600"/>
+                </Grid>
+                <Canvas Name="canvasThreeSecond">
+                    <Viewport3D Name="viewportThreeSecond" 
+                Width="{Binding ActualWidth, ElementName=canvasThreeSecond}" 
+                Height="{Binding ActualHeight, ElementName=canvasThreeSecond}"
+                HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Viewport3D.Camera>
+                            <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45"/>
+                        </Viewport3D.Camera>
+                        <ModelVisual3D>
+                            <ModelVisual3D.Content>
+                                <Model3DGroup>
+                                    <DirectionalLight Color="White" Direction="1,-1,2"/>
+                                    <GeometryModel3D x:Name="sphereThreeSecond">
+                                        <GeometryModel3D.Material>
+                                            <DiffuseMaterial Brush="Yellow"/>
+                                        </GeometryModel3D.Material>
+                                    </GeometryModel3D>
+                                </Model3DGroup>
+                            </ModelVisual3D.Content>
+                        </ModelVisual3D>
+                    </Viewport3D>
+                </Canvas>
+                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <Border x:Name="ThreeSecondTrackBorder" BorderBrush="Black" BorderThickness="2.5,5,5,2.5"/>
+            </Grid>
+
+            <!-- bottom SECTION -->
+            <Grid Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2">
+                <Grid Name="gridThreeThird" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Column="0" Fill="#FFFFE0"/>
+                    <Rectangle Grid.Column="1" Fill="#FFFFB3"/>
+                    <Rectangle Grid.Column="2" Fill="#FFFF80"/>
+                    <Rectangle Grid.Column="3" Fill="#FFFF4D"/>
+                    <Rectangle Grid.Column="4" Fill="#CCCC00"/>
+                    <Rectangle Grid.Column="5" Fill="#999900"/>
+                    <Rectangle Grid.Column="6" Fill="#666600"/>
+                </Grid>
+                <Canvas Name="canvasThreeThird">
+                    <Viewport3D Name="viewportThreeThird" 
+    Width="{Binding ActualWidth, ElementName=canvasThreeThird}" 
+    Height="{Binding ActualHeight, ElementName=canvasThreeThird}"
+    HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Viewport3D.Camera>
+                            <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45"/>
+                        </Viewport3D.Camera>
+                        <ModelVisual3D>
+                            <ModelVisual3D.Content>
+                                <Model3DGroup>
+                                    <DirectionalLight Color="White" Direction="1,-1,2"/>
+                                    <GeometryModel3D x:Name="sphereThreeThird">
+                                        <GeometryModel3D.Material>
+                                            <DiffuseMaterial Brush="Yellow"/>
+                                        </GeometryModel3D.Material>
+                                    </GeometryModel3D>
+                                </Model3DGroup>
+                            </ModelVisual3D.Content>
+                        </ModelVisual3D>
+                    </Viewport3D>
+                </Canvas>
+                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <Border x:Name="ThreeThirdTrackBorder" BorderBrush="Black" BorderThickness="2.5,5,5,2.5"/>
+            </Grid>
+
+            <Button Name="threeBack" Click="onClickMultiBack" Visibility="Visible" Width="60" Height="60" Background="Transparent" HorizontalAlignment="left" VerticalAlignment="Top" Margin="10,10,20,0" BorderThickness="0">
+                <Image Source="Assets/bLeft.png"/>
+            </Button>
+
+
+            <Button Name="buttonThreePlay" Click="onClickPlayButton" Visibility="Visible" Width="60" Height="60" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,20,0" BorderThickness="0">
+                <Image Source="Assets/bPlay.png"/>
+            </Button>
+            <Button Name="buttonThreeStop" Click="onClickStopButton" Visibility="Hidden" Width="60" Height="60" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,20,0" BorderThickness="0">
+                <Image Source="Assets/bPause.png"/>
+            </Button>
+
+            <Label Content="HAPTIC FEATURE" 
+Foreground="#6e4379" 
+FontSize="20" 
+FontFamily="Rockwell Extra Bold"
+HorizontalAlignment="Center" 
+VerticalAlignment="Top" 
+Margin="0,95,0,0" 
+Background="Transparent" 
+Padding="20" 
+HorizontalContentAlignment="Center" 
+VerticalContentAlignment="Center" FontWeight="Bold"/>
+
+            <!-- Chroma/Mfcc Buttons -->
+            <Button Name="threeChromaButton" Click="onClickChroma" Visibility="Visible" Width="246" Height="120" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,110,0,0" BorderThickness="0">
+                <Image Source="Assets/chroma.png"/>
+            </Button>
+            <Button Name="threeMfccButton" Click="onClickMfcc" Visibility="Hidden" Width="256" Height="120" Background="transparent" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,110,0,0" BorderThickness="0">
+                <Image Source="Assets/mfcc.png"/>
+            </Button>
+            <StackPanel Name="threeStack" Grid.Column="0" Grid.Row="1" Grid.RowSpan="2">
+                <Slider x:Name="volumeThreeSlider" 
+    Minimum="0" Maximum="1" Value="1" 
+    Width="32" Height="325" 
+    Orientation="Vertical" 
+    Style="{StaticResource CoolSliderStyle}" 
+    ValueChanged="OnVolumeSliderChanged" />
+                <Label Content="VOLUME" 
+Foreground="#6e4379" 
+FontSize="20" 
+FontFamily="Rockwell Extra Bold"
+HorizontalAlignment="Center" 
+VerticalAlignment="Top" 
+Margin="0,0,0,0" 
+Background="Transparent" 
+Padding="5" 
+HorizontalContentAlignment="Center" 
+VerticalContentAlignment="Center" FontWeight="Bold"/>
+            </StackPanel>
+        </Grid>
+
+
+        <!-- SINGLE Playback Screen -->
+        <Grid x:Name="SingleTrackScreen" Visibility="Collapsed" SizeChanged="SingleTrack_SizeChanged">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
+                <Border.Background>
+                    <ImageBrush ImageSource="Assets/01_bc.png" Stretch="Fill"/>
+                </Border.Background>
+            </Border>
+
+            <!-- BASS SECTION -->
+            <Grid Name="bassGrid" Grid.Column="1" Grid.Row="0">
+                <Grid Name="gridBass" Grid.Row="0" Background="Transparent" Loaded="SingleLoaded">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Column="0" Fill="#2666CC"/>
+                    <Rectangle Grid.Column="1" Fill="#2666CC"/>
+                    <Rectangle Grid.Column="2" Fill="#2666CC"/>
+                    <Rectangle Grid.Column="3" Fill="#2666CC"/>
+                    <Rectangle Grid.Column="4" Fill="#2666CC"/>
+                    <Rectangle Grid.Column="5" Fill="#2666CC"/>
+                    <Rectangle Grid.Column="6" Fill="#2666CC"/>
+
+                </Grid>
+
+                <Canvas Name="canvasBass">
+                    <Viewport3D Name="viewportBass" 
+                        Width="{Binding ActualWidth, ElementName=canvasBass}" 
+                        Height="{Binding ActualHeight, ElementName=canvasBass}"
+                        HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Viewport3D.Camera>
+                            <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45"/>
+                        </Viewport3D.Camera>
+                        <ModelVisual3D>
+                            <ModelVisual3D.Content>
+                                <Model3DGroup>
+                                    <DirectionalLight Color="White" Direction="1,-1,2"/>
+                                    <GeometryModel3D x:Name="sphereBass">
+                                        <GeometryModel3D.Material>
+                                            <DiffuseMaterial Brush="Blue"/>
+                                        </GeometryModel3D.Material>
+                                    </GeometryModel3D>
+                                </Model3DGroup>
+                            </ModelVisual3D.Content>
+                        </ModelVisual3D>
+                    </Viewport3D>
+                </Canvas>
+                <TextBlock Text="Bass" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <Border x:Name="bassTrackBorder" BorderBrush="Black" BorderThickness="5,5,2.5,2.5"/>
+            </Grid>
+
+            <!-- DRUMS SECTION -->
+            <Grid Grid.Column="2" Grid.Row="0">
+                <Grid Name="gridDrum" Grid.Row="0" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Vertical Stripes with Solid Colors -->
+                    <Rectangle Grid.Column="0" Fill="#CC0000"/>
+                    <Rectangle Grid.Column="1" Fill="#CC0000"/>
+                    <Rectangle Grid.Column="2" Fill="#CC0000"/>
+                    <Rectangle Grid.Column="3" Fill="#CC0000"/>
+                    <Rectangle Grid.Column="4" Fill="#CC0000"/>
+                    <Rectangle Grid.Column="5" Fill="#CC0000"/>
+                    <Rectangle Grid.Column="6" Fill="#CC0000"/>
+                </Grid>
+                <Canvas Name="canvasDrum">
+
+                    <Viewport3D Name="viewportDrum" 
+                    Width="{Binding ActualWidth, ElementName=canvasDrum}" 
+                    Height="{Binding ActualHeight, ElementName=canvasDrum}"
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Viewport3D.Camera>
+                            <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45"/>
+                        </Viewport3D.Camera>
+                        <ModelVisual3D>
+                            <ModelVisual3D.Content>
+                                <Model3DGroup>
+                                    <DirectionalLight Color="Red" Direction="1,-1,2"/>
+                                    <GeometryModel3D x:Name="sphereDrum">
+                                        <GeometryModel3D.Material>
+                                            <DiffuseMaterial Brush="Red"/>
+                                        </GeometryModel3D.Material>
+                                    </GeometryModel3D>
+                                </Model3DGroup>
+                            </ModelVisual3D.Content>
+                        </ModelVisual3D>
+                    </Viewport3D>
+                    <TextBlock Text="Drum" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                </Canvas>
+                <Border x:Name="drumTrackBorder" BorderBrush="Black" BorderThickness="5,5,2.5,2.5"/>
+            </Grid>
+
+            <!-- OTHER SECTION -->
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Grid Name="gridOther" Grid.Row="0" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Vertical Stripes with Solid Colors -->
+                    <Rectangle Grid.Column="0" Fill="#00CC00"/>
+                    <Rectangle Grid.Column="1" Fill="#00CC00"/>
+                    <Rectangle Grid.Column="2" Fill="#00CC00"/>
+                    <Rectangle Grid.Column="3" Fill="#00CC00"/>
+                    <Rectangle Grid.Column="4" Fill="#00CC00"/>
+                    <Rectangle Grid.Column="5" Fill="#00CC00"/>
+                    <Rectangle Grid.Column="6" Fill="#00CC00"/>
+                </Grid>
+
+                <Canvas Name="canvasOther">
+                    <Viewport3D Name="viewportOther" 
+                    Width="{Binding ActualWidth, ElementName=canvasOther}" 
+                    Height="{Binding ActualHeight, ElementName=canvasOther}"
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Viewport3D.Camera>
+                            <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45"/>
+                        </Viewport3D.Camera>
+                        <ModelVisual3D>
+                            <ModelVisual3D.Content>
+                                <Model3DGroup>
+                                    <DirectionalLight Color="Green" Direction="1,-1,2"/>
+                                    <GeometryModel3D x:Name="sphereOther">
+                                        <GeometryModel3D.Material>
+                                            <DiffuseMaterial Brush="Green"/>
+                                        </GeometryModel3D.Material>
+                                    </GeometryModel3D>
+                                </Model3DGroup>
+                            </ModelVisual3D.Content>
+                        </ModelVisual3D>
+                    </Viewport3D>
+                    <TextBlock Text="Other" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                </Canvas>
+                <Border x:Name="otherTrackBorder" BorderBrush="Black" BorderThickness="5,5,2.5,2.5"/>
+            </Grid>
+
+            <!-- VOICE SECTION -->
+            <Grid Grid.Column="2" Grid.Row="1">
+                <Grid Name="gridVoice" Grid.Row="0" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Column="0" Fill="#FFFF4D"/>
+                    <Rectangle Grid.Column="1" Fill="#FFFF4D"/>
+                    <Rectangle Grid.Column="2" Fill="#FFFF4D"/>
+                    <Rectangle Grid.Column="3" Fill="#FFFF4D"/>
+                    <Rectangle Grid.Column="4" Fill="#FFFF4D"/>
+                    <Rectangle Grid.Column="5" Fill="#FFFF4D"/>
+                    <Rectangle Grid.Column="6" Fill="#FFFF4D"/>
+                </Grid>
+                <Canvas Name="canvasVoice">
+                    <Viewport3D Name="viewpoerVoice" 
+            Width="{Binding ActualWidth, ElementName=canvasVoice}" 
+            Height="{Binding ActualHeight, ElementName=canvasVoice}"
+            HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Viewport3D.Camera>
+                            <PerspectiveCamera Position="0,0,5" LookDirection="0,0,-5" UpDirection="0,1,0" FieldOfView="45"/>
+                        </Viewport3D.Camera>
+                        <ModelVisual3D>
+                            <ModelVisual3D.Content>
+                                <Model3DGroup>
+                                    <DirectionalLight Color="Yellow" Direction="1,-1,2"/>
+                                    <GeometryModel3D x:Name="sphereVoice">
+                                        <GeometryModel3D.Material>
+                                            <DiffuseMaterial Brush="Yellow"/>
+                                        </GeometryModel3D.Material>
+                                    </GeometryModel3D>
+                                </Model3DGroup>
+                            </ModelVisual3D.Content>
+                        </ModelVisual3D>
+                    </Viewport3D>
+                </Canvas>
+                <TextBlock Text="Voice" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <Border x:Name="voiceTrackBorder" BorderBrush="Black" BorderThickness="5,5,2.5,2.5"/>
+            </Grid>
+
+
+
+            <!-- Back Button -->
+            <Button Name="singleBack" Click="onClickSingleBack" Visibility="Visible" Width="80" Height="80" Background="Transparent" HorizontalAlignment="left" VerticalAlignment="Top" Margin="10,10,20,0" BorderThickness="0">
+                <Image Source="Assets/bLeft.png"/>
+            </Button>
+
+            <!-- Play/Stop Buttons -->
+            <Button Name="singlePlayButton" Click="onClickPlayButton" Visibility="Visible" Width="80" Height="80" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,20,0" BorderThickness="0">
+                <Image Source="Assets/bPlay.png"/>
+            </Button>
+            <Button Name="singleStopButton" Click="onClickStopButton" Visibility="Hidden" Width="80" Height="80" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,20,0" BorderThickness="0">
+                <Image Source="Assets/bPause.png"/>
+            </Button>
+
+            <!-- Chroma/Mfcc Buttons -->
+            <Label Content="HAPTIC FEATURE" 
+Foreground="#6e4379" 
+FontSize="20" 
+FontFamily="Rockwell Extra Bold"
+HorizontalAlignment="Center" 
+VerticalAlignment="Top" 
+Margin="0,95,0,0" 
+Background="Transparent" 
+Padding="20" 
+HorizontalContentAlignment="Center" 
+VerticalContentAlignment="Center" FontWeight="Bold"/>
+
+            <Button Name="singleChromaButton" Click="onClickChroma" Visibility="Visible" Width="246" Height="120" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,110,0,0" BorderThickness="0">
+                <Image Source="Assets/chroma.png" RenderTransformOrigin="0.511,1.124"/>
+            </Button>
+            <Button Name="singleMfccButton" Click="onClickMfcc" Visibility="Hidden" Width="246" Height="120" Background="transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,110,0,0" BorderThickness="0">
+                <Image Source="Assets/mfcc.png"/>
+            </Button>
+
+            <StackPanel Name="SingleStack" Grid.Column="0" Grid.Row="1">
+                <Slider x:Name="singleVolumeSlider" 
+    Minimum="0" Maximum="1" Value="1" 
+    Width="32" Height="325" 
+    Orientation="Vertical" 
+    Style="{StaticResource CoolSliderStyle}" 
+    ValueChanged="OnVolumeSliderChanged" />
+                <Label Content="VOLUME" 
+Foreground="#6e4379" 
+FontSize="20" 
+FontFamily="Rockwell Extra Bold"
+HorizontalAlignment="Center" 
+VerticalAlignment="Top" 
+Margin="0,0,0,0" 
+Background="Transparent" 
+Padding="5" 
+HorizontalContentAlignment="Center" 
+VerticalContentAlignment="Center" FontWeight="Bold"/>
+            </StackPanel>
+
+        </Grid>
+
+        <!-- Multi Upload Screen -->
+        <Grid x:Name="UploadScreen" Visibility="Collapsed" >
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/mode_background.png" />
+            </Grid.Background>
+            <Label Content="UPLOAD FILES AND PRESS PLAY" 
+Foreground="#6e4379" 
+FontSize="54" 
+FontFamily="Rockwell Extra Bold"
+HorizontalAlignment="Center" 
+VerticalAlignment="Top" 
+Margin="0,160,0,0" 
+Background="Transparent" 
+Padding="10" 
+HorizontalContentAlignment="Center" 
+VerticalContentAlignment="Center" 
+Grid.Row="1" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button x:Name="backButton" Style="{StaticResource ImageButtonStyle}" Margin="50" Click="onClickBack">
+                    <Image Source="Assets/bLeft.png" Height="200" Width="200"/>
+                </Button>
+                <Button x:Name="UploadButton" Style="{StaticResource ImageButtonStyle}" Margin="50" Click="UploadButton_Click">
+                    <Image Source="Assets/bUpload.png" Height="200" Width="200"/>
+                </Button>
+                <Button x:Name="PlayButton" Style="{StaticResource ImageButtonStyle}" Margin="50" Click="PlayButton_Click">
+                    <Image Source="Assets/bPlay.png" Height="200" Width="200"/>
+                </Button>
+            </StackPanel>
+            <ListBox x:Name="SelectedFilesListBox" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="200" Width="300" Margin="10,0,0,50" Visibility="Collapsed"/>
+            <Button x:Name="FinalizeButton" Content="Finalize Selection" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,50" Click="FinalizeSelectionButton_Click" Visibility="Collapsed"/>
+        </Grid>
+
+        <!-- Single Upload Screen -->
+        <Grid x:Name="SingleUploadScreen" Visibility="Collapsed">
+            <Grid.Background>
+                <ImageBrush ImageSource="Assets/mode_background.png" />
+            </Grid.Background>
+            <Label Content="UPLOAD FILE AND PRESS PLAY" 
+Foreground="#6e4379" 
+FontSize="54" 
+FontFamily="Rockwell Extra Bold"
+HorizontalAlignment="Center" 
+VerticalAlignment="Top" 
+Margin="0,160,0,0" 
+Background="Transparent" 
+Padding="10" 
+HorizontalContentAlignment="Center" 
+VerticalContentAlignment="Center" 
+Grid.Row="1" FontWeight="Bold"/>
+            <StackPanel Name="singleUploadStack" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button x:Name="backSingleButton" Style="{StaticResource ImageButtonStyle}" Margin="50" Click="onClickBack">
+                    <Image Source="Assets/bLeft.png" Height="200" Width="200"/>
+                </Button>
+                <Button x:Name="singleUploadButton" Style="{StaticResource ImageButtonStyle}" Margin="50" Click="SingleUploadButton_Click">
+                    <Image Source="Assets/bUpload.png" Height="200" Width="200"/>
+                </Button>
+                <Button x:Name="singlePlayUpButton" Style="{StaticResource ImageButtonStyle}" Margin="50" Click="SinglePlayButton_Click">
+                    <Image Source="Assets/bPlay.png" Height="200" Width="200"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+
+    </Grid>
+
+
+</Window>
