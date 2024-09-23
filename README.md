@@ -19,10 +19,18 @@ This project is developed as part of a thesis in Music and Acoustic Engineering 
 - **Sprite**: A library for managing sprite graphics in WPF applications.
 - **Tanvas.TanvasTouch.WpfUtilities**: Utilities for integrating Tanvas touch technology with WPF applications.
 - **Python.NET**: A package that allows Python code to interoperate with .NET applications, enabling the use of .NET libraries in Python scripts.
+- **MathNet.Numerics**: The numerical foundation of the Math.NET project, providing methods and algorithms for numerical computations in science, engineering, and everyday use.
+- **NewtonSoft.Json**: A popular high-performance JSON framework for .NET.
 
 #### Python Libraries
 - **Python**: Version 3.6 to 3.9 is required.
-- 
+- **sys**: Provides access to system-specific parameters and functions.
+- **os**: Offers a way to interact with the operating system, including file and directory manipulation.
+- **json**: A library for parsing JSON data and converting it to Python objects.
+- **numpy**: A fundamental package for numerical computations in Python, supporting large multi-dimensional arrays and matrices.
+- **librosa**: A library for audio analysis that provides tools for music and audio analysis tasks.
+- **tensorflow**: An open-source platform for machine learning that can be used for developing deep learning models.
+- **tkinter**: The standard GUI toolkit for Python, used for creating graphical user interfaces.
 
 ### Steps
 1. Clone the repository:
@@ -35,9 +43,11 @@ This project is developed as part of a thesis in Music and Acoustic Engineering 
     ```
 3. Install necessary Python libraries:
     ```bash
-    pip install librosa spleeter
+    pip install librosa spleeter numpy tensorflow
     ```
 4. Open the solution file (`MusicTanvas.sln`) with Visual Studio.
+5. **Modify the `config.txt` File**: Open the `config.txt` file and add your Python DLL path in the following format: pythonDllPath=C:\\Users\\yourusername\\path\\to\\python. Ensure to replace `C:\\Users\\yourusername\\path\\to\\pythonX.dll` with the actual path to your Python DLL file (where `X` corresponds to your Python version, e.g., `python39.dll`).
+
 
 ## Usage
 ### Running the Application
