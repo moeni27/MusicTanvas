@@ -14,9 +14,8 @@ This project is developed as part of a thesis in Music and Acoustic Engineering 
 
 ## Installation
 ### Prerequisites
-- .NET Core SDK 3.1 or higher
 - Visual Studio 2019 or later
-- Python 3.6 or higher
+- Python from 3.6 to 3.9
 - [NAudio](https://github.com/naudio/NAudio)
 - [Python.NET](https://pythonnet.github.io/)
 - [Sprite](https://www.nuget.org/packages/Sprite/)
