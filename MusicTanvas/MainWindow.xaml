@@ -177,7 +177,11 @@
                         </ModelVisual3D>
                     </Viewport3D>
                 </Canvas>
-                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <TextBlock FontSize="33" FontWeight="Bold" FontFamily="Impact" TextAlignment="Left" Margin="5">
+                   <Span Background="Black" Foreground="#6e4379">
+                       <Run x:Name="instrumentTextFourFirst" Text=""/>
+                   </Span>
+                </TextBlock>
                 <Border x:Name="woodTrackBorder" BorderBrush="Black" BorderThickness="5,5,2.5,2.5"/>
             </Grid>
 
@@ -223,7 +227,11 @@
                         </ModelVisual3D>
                     </Viewport3D>
                 </Canvas>
-                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <TextBlock FontSize="33" FontWeight="Bold" FontFamily="Impact" TextAlignment="Left" Margin="5">
+                   <Span Background="Black" Foreground="#6e4379">
+                       <Run x:Name="instrumentTextFourSecond" Text=""/>
+                   </Span>
+                </TextBlock>
                 <Border x:Name="brassTrackBorder" BorderBrush="Black" BorderThickness="2.5,5,5,2.5"/>
             </Grid>
 
@@ -269,7 +277,11 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
                         </ModelVisual3D>
                     </Viewport3D>
                 </Canvas>
-                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <TextBlock FontSize="33" FontWeight="Bold" FontFamily="Impact" TextAlignment="Left" Margin="5">
+                   <Span Background="Black" Foreground="#6e4379">
+                       <Run x:Name="instrumentTextFourThird" Text=""/>
+                   </Span>
+                </TextBlock>
                 <Border x:Name="FourThirdTrackBorder" BorderBrush="Black" BorderThickness="5,2.5,2.5,5"/>
             </Grid>
 
@@ -315,7 +327,11 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
                         </ModelVisual3D>
                     </Viewport3D>
                 </Canvas>
-                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <TextBlock FontSize="33" FontWeight="Bold" FontFamily="Impact" TextAlignment="Left" Margin="5">
+                   <Span Background="Black" Foreground="#6e4379">
+                       <Run x:Name="instrumentTextFourFourth" Text=""/>
+                   </Span>
+                </TextBlock>
                 <Border x:Name="FourFourthTrackBorder" BorderBrush="Black" BorderThickness="2.5,2.5,5,5"/>
             </Grid>
 
@@ -433,7 +449,11 @@ VerticalContentAlignment="Center" FontWeight="Bold"/>
                         </ModelVisual3D>
                     </Viewport3D>
                 </Canvas>
-                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <TextBlock FontSize="33" FontWeight="Bold" FontFamily="Impact" TextAlignment="Left" Margin="5">
+                    <Span Background="Black" Foreground="#6e4379">
+                        <Run x:Name="instrumentTextOne" Text=""/>
+                    </Span>
+                </TextBlock>
                 <Border x:Name="oneTrackBorder" BorderBrush="Black" BorderThickness="5,5,5,5"/>
             </Grid>
 
@@ -549,7 +569,11 @@ VerticalContentAlignment="Center" FontWeight="Bold"/>
                         </ModelVisual3D>
                     </Viewport3D>
                 </Canvas>
-                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <TextBlock FontSize="33" FontWeight="Bold" FontFamily="Impact" TextAlignment="Left" Margin="5">
+                   <Span Background="Black" Foreground="#6e4379">
+                       <Run x:Name="instrumentTextTwoFirst" Text=""/>
+                   </Span>
+                </TextBlock>
                 <Border x:Name="twoFirstTrackBorder" BorderBrush="Black" BorderThickness="5,5,2.5,5"/>
             </Grid>
 
@@ -595,7 +619,11 @@ VerticalContentAlignment="Center" FontWeight="Bold"/>
                         </ModelVisual3D>
                     </Viewport3D>
                 </Canvas>
-                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <TextBlock FontSize="33" FontWeight="Bold" FontFamily="Impact" TextAlignment="Left" Margin="5">
+                   <Span Background="Black" Foreground="#6e4379">
+                       <Run x:Name="instrumentTextTwoSecond" Text=""/>
+                   </Span>
+                </TextBlock>                
                 <Border x:Name="twoSecondTrackBorder" BorderBrush="Black" BorderThickness="2.5,5,5,5"/>
             </Grid>
 
@@ -711,7 +739,11 @@ VerticalContentAlignment="Center" FontWeight="Bold"/>
                         </ModelVisual3D>
                     </Viewport3D>
                 </Canvas>
-                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <TextBlock FontSize="33" FontWeight="Bold" FontFamily="Impact" TextAlignment="Left" Margin="5">
+                   <Span Background="Black" Foreground="#6e4379">
+                       <Run x:Name="instrumentTextThreeFirst" Text=""/>
+                   </Span>
+                </TextBlock>
                 <Border x:Name="ThreeFirstTrackBorder" BorderBrush="Black" BorderThickness="5,5,2.5,2.5"/>
             </Grid>
 
@@ -757,7 +789,11 @@ VerticalContentAlignment="Center" FontWeight="Bold"/>
                         </ModelVisual3D>
                     </Viewport3D>
                 </Canvas>
-                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <TextBlock FontSize="33" FontWeight="Bold" FontFamily="Impact" TextAlignment="Left" Margin="5">
+                   <Span Background="Black" Foreground="#6e4379">
+                       <Run x:Name="instrumentTextThreeSecond" Text=""/>
+                   </Span>
+                </TextBlock>
                 <Border x:Name="ThreeSecondTrackBorder" BorderBrush="Black" BorderThickness="2.5,5,5,2.5"/>
             </Grid>
 
@@ -803,7 +839,11 @@ VerticalContentAlignment="Center" FontWeight="Bold"/>
                         </ModelVisual3D>
                     </Viewport3D>
                 </Canvas>
-                <TextBlock Text="" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <TextBlock FontSize="33" FontWeight="Bold" FontFamily="Impact" TextAlignment="Left" Margin="5">
+                   <Span Background="Black" Foreground="#6e4379">
+                       <Run x:Name="instrumentTextThreeThird" Text=""/>
+                   </Span>
+                </TextBlock>                
                 <Border x:Name="ThreeThirdTrackBorder" BorderBrush="Black" BorderThickness="2.5,5,5,2.5"/>
             </Grid>
 
@@ -922,7 +962,11 @@ VerticalContentAlignment="Center" FontWeight="Bold"/>
                         </ModelVisual3D>
                     </Viewport3D>
                 </Canvas>
-                <TextBlock Text="Bass" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <TextBlock FontSize="33" FontWeight="Bold" FontFamily="Impact" TextAlignment="Left" Margin="5">
+                    <Span Background="Black" Foreground="#6e4379">
+                        <Run Text="BASS"/>
+                    </Span>
+                </TextBlock>
                 <Border x:Name="bassTrackBorder" BorderBrush="Black" BorderThickness="5,5,2.5,2.5"/>
             </Grid>
 
@@ -970,8 +1014,11 @@ VerticalContentAlignment="Center" FontWeight="Bold"/>
                             </ModelVisual3D.Content>
                         </ModelVisual3D>
                     </Viewport3D>
-                    <TextBlock Text="Drum" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
-                </Canvas>
+                    <TextBlock FontSize="33" FontWeight="Bold" FontFamily="Impact" TextAlignment="Left" Margin="5">
+                        <Span Background="Black" Foreground="#6e4379">
+                            <Run Text="DRUM"/>
+                        </Span>
+                    </TextBlock>                </Canvas>
                 <Border x:Name="drumTrackBorder" BorderBrush="Black" BorderThickness="5,5,2.5,2.5"/>
             </Grid>
 
@@ -1019,7 +1066,11 @@ VerticalContentAlignment="Center" FontWeight="Bold"/>
                             </ModelVisual3D.Content>
                         </ModelVisual3D>
                     </Viewport3D>
-                    <TextBlock Text="Other" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                    <TextBlock FontSize="33" FontWeight="Bold" FontFamily="Impact" TextAlignment="Left" Margin="5">
+                       <Span Background="Black" Foreground="#6e4379">
+                           <Run Text="OTHER"/>
+                       </Span>
+                    </TextBlock>
                 </Canvas>
                 <Border x:Name="otherTrackBorder" BorderBrush="Black" BorderThickness="5,5,2.5,2.5"/>
             </Grid>
@@ -1066,7 +1117,11 @@ VerticalContentAlignment="Center" FontWeight="Bold"/>
                         </ModelVisual3D>
                     </Viewport3D>
                 </Canvas>
-                <TextBlock Text="Voice" Foreground="Black" FontSize="30" Margin="5" FontWeight="Bold" FontFamily="Impact"/>
+                <TextBlock FontSize="33" FontWeight="Bold" FontFamily="Impact" TextAlignment="Left" Margin="5">
+                    <Span Background="Black" Foreground="#6e4379">
+                        <Run Text="VOCALS"/>
+                    </Span>
+                </TextBlock>
                 <Border x:Name="voiceTrackBorder" BorderBrush="Black" BorderThickness="5,5,2.5,2.5"/>
             </Grid>
 

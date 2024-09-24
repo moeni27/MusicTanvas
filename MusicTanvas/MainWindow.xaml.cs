@@ -1793,10 +1793,13 @@ namespace MusicTanvas
                 myView.AddSprite(sprite_oneSlider);
                 myView.AddSprite(sprite_oneTrack);
 
+                instrumentTextOne.Text = predictedInstruments[0].ToUpper();
+
 
                 // Attach LayoutUpdated event to ensure the layout is complete before updating the sprite positions
                 MultiOneScreen.LayoutUpdated += (s, args) =>
                 {
+                    
                     UpdateSpriteMultiTrack(sprite_oneTrack, sprite_oneSlider, sprite_oneLeft, sprite_onePlay, sprite_oneChroma);
                 };
 
@@ -1835,6 +1838,9 @@ namespace MusicTanvas
                 myView.AddSprite(sprite_twoLeft);
                 myView.AddSprite(sprite_twoSlider);
                 myView.AddSprite(sprite_twoTrack);
+
+                instrumentTextTwoFirst.Text = predictedInstruments[0].ToUpper();
+                instrumentTextTwoSecond.Text = predictedInstruments[1].ToUpper();
 
 
                 // Attach LayoutUpdated event to ensure the layout is complete before updating the sprite positions
@@ -1880,6 +1886,9 @@ namespace MusicTanvas
                 myView.AddSprite(sprite_threeSlider);
                 myView.AddSprite(sprite_threeTrack);
 
+                instrumentTextThreeFirst.Text = predictedInstruments[0].ToUpper();
+                instrumentTextThreeSecond.Text = predictedInstruments[1].ToUpper();
+                instrumentTextThreeThird.Text = predictedInstruments[2].ToUpper();
 
                 // Attach LayoutUpdated event to ensure the layout is complete before updating the sprite positions
                 MultiThreeScreen.LayoutUpdated += (s, args) =>
@@ -1923,6 +1932,10 @@ namespace MusicTanvas
                 myView.AddSprite(sprite_fourSlider);
                 myView.AddSprite(sprite_fourTrack);
 
+                instrumentTextFourFirst.Text = predictedInstruments[0].ToUpper();
+                instrumentTextFourSecond.Text = predictedInstruments[1].ToUpper();
+                instrumentTextFourThird.Text = predictedInstruments[2].ToUpper();
+                instrumentTextFourFourth.Text = predictedInstruments[3].ToUpper();
 
                 // Attach LayoutUpdated event to ensure the layout is complete before updating the sprite positions
                 MultiFourScreen.LayoutUpdated += (s, args) =>
