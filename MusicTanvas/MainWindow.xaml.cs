@@ -117,7 +117,7 @@ namespace MusicTanvas
             {"organ", Color.FromRgb(75, 0, 130)}, // Deep Purple
             {"piano", Colors.DarkGray}, // Special case for gradient
             {"saxophone", Color.FromRgb(139, 69, 19)}, // Brown
-            {"trumpet", Color.FromRgb(255, 255, 224)}, // Light Yellow
+            {"trumpet", Color.FromRgb(247, 255, 0)}, // Light Yellow
             {"violin", Color.FromRgb(238, 130, 238)}, // Light Violet
             {"voice", Color.FromRgb(255, 215, 0)} // Gold
         };
