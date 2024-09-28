@@ -18,7 +18,7 @@ def extract_chroma(file_path):
 # Function to predict the instrument using the provided MFCC matrix and computed chroma matrix
 def predict_instrument(mfcc_matrix, chroma_matrix):
     script_directory = os.path.dirname(os.path.abspath(__file__))
-    model_path = os.path.join(script_directory, "model_ex.h5")
+    model_path = os.path.join(script_directory, "model_recognition.h5")
     model = tf.keras.models.load_model(model_path)
 
     mfcc_matrix = np.array(mfcc_matrix)
