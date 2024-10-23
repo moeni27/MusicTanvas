@@ -18,7 +18,6 @@ This project is developed as part of a thesis in Music and Acoustic Engineering 
 - **NAudio**: A powerful audio library for .NET that provides audio playback and manipulation capabilities.
 - **Tanvas.TanvasTouch.WpfUtilities**: Utilities for integrating Tanvas touch technology with WPF applications.
 - **Python.NET**: A package that allows Python code to interoperate with .NET applications, enabling the use of .NET libraries in Python scripts.
-- **MathNet.Numerics**: The numerical foundation of the Math.NET project, providing methods and algorithms for numerical computations in science, engineering, and everyday use.
 - **NewtonSoft.Json**: A popular high-performance JSON framework for .NET.
 
 #### Python Libraries
