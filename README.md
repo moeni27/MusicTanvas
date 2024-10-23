@@ -22,7 +22,7 @@ This project is developed as part of a thesis in Music and Acoustic Engineering 
 - **NewtonSoft.Json**: A popular high-performance JSON framework for .NET.
 
 #### Python Libraries
-- **Python**: Version 3.6 to 3.9 is required.
+- **Python**: Version 3.7 to 3.10 is required.
 - **sys**: Provides access to system-specific parameters and functions.
 - **os**: Offers a way to interact with the operating system, including file and directory manipulation.
 - **json**: A library for parsing JSON data and converting it to Python objects.
