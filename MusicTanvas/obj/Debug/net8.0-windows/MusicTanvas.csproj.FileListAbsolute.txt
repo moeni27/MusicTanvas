@@ -1,0 +1,108 @@
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\MusicTanvas.exe
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\MusicTanvas.deps.json
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\MusicTanvas.runtimeconfig.json
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\MusicTanvas.dll
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\MusicTanvas.pdb
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\MathNet.Numerics.dll
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.dll
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.Asio.dll
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.Core.dll
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.Midi.dll
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.Wasapi.dll
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.WinForms.dll
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.WinMM.dll
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\Python.Runtime.dll
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\Sprite.dll
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\Tanvas.TanvasTouch.dll
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\Tanvas.TanvasTouch.WpfUtilities.dll
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.csproj.AssemblyReference.cache
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas_MarkupCompile.cache
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas_MarkupCompile.lref
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.g.resources
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.AssemblyInfoInputs.cache
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.AssemblyInfo.cs
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.csproj.CoreCompileInputs.cache
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.sourcelink.json
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTan.6374D9D2.Up2Date
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.dll
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\refint\MusicTanvas.dll
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.pdb
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.genruntimeconfig.cache
+C:\Users\noemi\Documents\GitHub\PoliTo\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\ref\MusicTanvas.dll
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\MusicTanvas.exe
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\MusicTanvas.deps.json
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\MusicTanvas.runtimeconfig.json
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\MusicTanvas.dll
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\MusicTanvas.pdb
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\MathNet.Numerics.dll
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.dll
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.Asio.dll
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.Core.dll
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.Midi.dll
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.Wasapi.dll
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.WinForms.dll
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.WinMM.dll
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\Python.Runtime.dll
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\Sprite.dll
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\Tanvas.TanvasTouch.dll
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\Tanvas.TanvasTouch.WpfUtilities.dll
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.csproj.AssemblyReference.cache
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas_MarkupCompile.cache
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas_MarkupCompile.lref
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.g.resources
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.AssemblyInfoInputs.cache
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.AssemblyInfo.cs
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.csproj.CoreCompileInputs.cache
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.sourcelink.json
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTan.6374D9D2.Up2Date
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.dll
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\refint\MusicTanvas.dll
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.pdb
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.genruntimeconfig.cache
+C:\Users\noemi\Documents\GitHub\Backup\Nuova cartella\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\ref\MusicTanvas.dll
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\MusicTanvas.exe
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\MusicTanvas.deps.json
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\MusicTanvas.runtimeconfig.json
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\MusicTanvas.dll
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\MusicTanvas.pdb
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\MathNet.Numerics.dll
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.dll
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.Asio.dll
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.Core.dll
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.Midi.dll
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.Wasapi.dll
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.WinForms.dll
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\NAudio.WinMM.dll
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\Python.Runtime.dll
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\Sprite.dll
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\Tanvas.TanvasTouch.dll
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\bin\Debug\net8.0-windows\Tanvas.TanvasTouch.WpfUtilities.dll
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.csproj.AssemblyReference.cache
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas_MarkupCompile.cache
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas_MarkupCompile.lref
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.g.resources
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.AssemblyInfoInputs.cache
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.AssemblyInfo.cs
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.csproj.CoreCompileInputs.cache
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.sourcelink.json
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTan.6374D9D2.Up2Date
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.dll
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\refint\MusicTanvas.dll
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.pdb
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\MusicTanvas.genruntimeconfig.cache
+C:\Users\noemi\Desktop\MusicAndAcoustic\Tesi\Codice\MusicTanvas\MusicTanvas\obj\Debug\net8.0-windows\ref\MusicTanvas.dll
